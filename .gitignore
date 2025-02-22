@@ -1,3 +1,4 @@
 dist/
 api/node_modules
 vue-sample/node_modules
+push.sh
