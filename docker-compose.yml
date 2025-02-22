@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - api1
+      - api2
+      - api3
+
+  api1:
+    build:
+      context: .
+      dockerfile: api/backend.Dockerfile
+    environment:
+      - BACKEND_ID=1
+
+  api2:
+    build:
+      context: .
+      dockerfile: api/backend.Dockerfile
+    environment:
+      - BACKEND_ID=2
+
+  api3:
+    build:
+      context: .
+      dockerfile: api/backend.Dockerfile
+    environment:
+      - BACKEND_ID=3
